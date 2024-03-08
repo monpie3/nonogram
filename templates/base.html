@@ -8,6 +8,10 @@
     <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
 </head>
 <body>
+    <nav>
+        <a href="{% url 'index' %}">Puzzles</a>
+        <a href="{% url 'instruction' %}">Instruction</a>
+    </nav>
     {% block content %}
     {% endblock %}
 </body>
