@@ -25,3 +25,21 @@ However, **mobile applications** are more narrowly dedicated to one type of puzz
 
 ### Technologies:
 I want to explore **django-silk** for monitoring and profiling, **tailwind** as CSS framework and **three.js** - 3D graphics JavaScript library.
+
+### Launch Project Locally
+
+It's highly recommended to use a virtual environment when working with third-party packages to ensure dependencies are managed effectively.
+
+0. Virtual Environment Setup.
+
+    For instructions on setting up a virtual environment, click [here](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#create-and-use-virtual-environments).
+
+1. Package Installation:
+
+* For the minimum set of packages required to run the project:
+
+    `pip install -e .`
+
+* For development purposes, including additional packages:
+
+    `pip install -e .'[dev]'`

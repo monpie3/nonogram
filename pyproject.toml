@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["nonogram"]
+
+[project]
+name = "nonogram"
+version = "0.1.0"
+readme = "README.md"
+dependencies = [
+    "Django==5.0.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black==24.2.0",
+    "ruff==0.3.2",
+    "pre-commit==3.6.2",
+    "mypy==1.9.0",
+    "pytest==8.1.1",
+    "pytest-cov==3.0.0",
+]
+
