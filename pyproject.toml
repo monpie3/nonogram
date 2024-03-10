@@ -17,6 +17,7 @@ dependencies = [
 dev = [
     "black==24.2.0",
     "ruff==0.3.2",
+    "pre-commit==3.6.2",
     "mypy==1.9.0",
     "django-stubs==4.2.7",
 ]
