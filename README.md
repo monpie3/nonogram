@@ -1,4 +1,9 @@
 # nonogram
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Checked with mypy](https://www.mypy-lang.org/static/mypy_badge.svg)](https://mypy-lang.org/)
+[![Actions status](https://github.com/monpie3/nonogram/actions/workflows/django.yml/badge.svg)](https://github.com/monpie3/nonogram/actions)
+
 
 This web application will be your go-to platform for generating logical puzzles for problem-solving. My aim is to create images that not only serve as puzzles but also convey meaningful representations once they are solved.
 
