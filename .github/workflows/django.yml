@@ -37,3 +37,6 @@ jobs:
       run: |
         mypy .
 
+    - name: Run Tests
+      run: |
+        python manage.py test
