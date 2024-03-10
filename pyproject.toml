@@ -17,9 +17,45 @@ dependencies = [
 dev = [
     "black==24.2.0",
     "ruff==0.3.2",
-    "pre-commit==3.6.2",
     "mypy==1.9.0",
-    "pytest==8.1.1",
-    "pytest-cov==3.0.0",
+    "django-stubs==4.2.7",
 ]
 
+[tool.ruff]
+lint.select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "I",   # isort
+    "N",   # pep8-naming
+    "UP",  # pyupgrade
+    "S",   # flake8-bandit
+    "B",   # flake8-bugbear
+    "A",   # flake8-builtins
+    "C4",  # flake8-comprehensions
+    "DJ",  # flake8-django
+    "G",   # flake8-logging-format
+    "T20", # flake8-print
+    "PT",  # flake8-pytest-style
+    "Q",   # flake8-quotes
+    "RET", # flake8-return
+    "SIM", # flake8-simplify
+    "ARG", # flake8-unused-arguments
+    "PTH", # flake8-use-pathlib
+    "TD",  # flake8-todos
+    "FIX", # flake8-fixme
+    "ERA", # eradicate
+    "PL",  # pylint
+]
+
+lint.ignore = [
+    "E501",  # line too long, handled by black
+]
+
+# https://docs.astral.sh/ruff/rules/
+
+
+[tool.mypy]
+plugins = ["mypy_django_plugin.main"]
+
+[tool.django-stubs]
+django_settings_module = "nonogram.settings"
