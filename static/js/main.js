@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { DragControls } from 'https://unpkg.com/three/examples/jsm/controls/DragControls.js';
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -13,6 +14,17 @@ const cube = new THREE.Mesh(geometry, material);
 scene.add(cube);
 
 camera.position.z = 5;
+
+const controls = new DragControls([cube], camera, renderer.domElement);
+
+controls.addEventListener('dragstart', function (event) {
+    event.object.material.color.set(0xc96b65);
+});
+
+controls.addEventListener('dragend', function (event) {
+    event.object.material.color.set(0xf21505);
+});
+
 
 function animate() {
 
