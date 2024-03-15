@@ -2,5 +2,17 @@
 
 
 {% block content %}
-Instruction.
+<p>Nonograms are logic puzzles that involve filling in cells on a grid to create an image.</p>
+{% load static %}
+
+<div class="rules">
+    <p>Here are the basic rules:</p>
+
+    <p>🧩 Grid: You start with a grid, usually rectangular, divided into rows and columns.</p>
+    <p>🔢 Numbers: Along the top and left side of the grid, you’ll find numbers. These numbers represent groups of colored cells. Each number indicates how many consecutive colored cells there are in that row or column.</p>
+    <p>🎨 Coloring: Your task is to fill in the grid cells either black (to represent the colored part) or with an “X” (to represent empty cells). The order of the numbers matters, indicating the sequence of colored cells.</p>
+    <p>📏 Spacing: There must be at least one empty cell between different groups of colored cells. This spacing ensures that the groups don’t merge together.</p>
+    <p>🧠 Solving Strategy: To solve a nonogram, use deduction and logic. Start by identifying rows or columns where you can definitively fill in cells based on the given numbers. Gradually build up the image by following the rules.</p>
+    <p>Remember, nonograms can be challenging but rewarding once you get the hang of them! 🧩🎨</p>
+</div>
 {% endblock %}
