@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 
 {% block content %}
@@ -13,7 +14,6 @@
   }
 </script>
 Hello, world. You're at the nonogram website.
-{% load static %}
 <script type="module" src="{% static 'js/main.js' %}"></script>
 
 {% endblock %}

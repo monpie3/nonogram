@@ -1,9 +1,9 @@
 {% extends "base.html" %}
-
+{% load static %}
 
 {% block content %}
 <p>Nonograms are logic puzzles that involve filling in cells on a grid to create an image.</p>
-{% load static %}
+<img src="{% static 'images/Generated_By_AI.png' %}" alt="A dog solving nonogram" width="300" height="300">
 
 <div class="rules">
     <p>Here are the basic rules:</p>
