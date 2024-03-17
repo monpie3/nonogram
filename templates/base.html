@@ -1,21 +1,25 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block page_title %}Nonogram{% endblock %}</title>
-    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
-</head>
-<body>
-    <nav>
-        <a href="{% url 'index' %}">Puzzles</a>
-        <a href="{% url 'instruction' %}">Instruction</a>
-    </nav>
-    {% block content %}
-    {% endblock %}
-    <footer>
-        <p>&copy; {% now "Y" %} Nonogram - 100 days of code challenge</p>
-    </footer>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Nonogram - online game">
+        <meta name="keywords"
+              content="nonogram, Japanese puzzles, Japanese crosswords">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            {% block page_title %}Nonogram{% endblock %}
+        </title>
+        <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+    </head>
+    <body>
+        <nav>
+            <a href="{% url 'index' %}">Puzzles</a>
+            <a href="{% url 'instruction' %}">Instruction</a>
+        </nav>
+        {% block content %}{% endblock %}
+        <footer>
+            <p>© {% now "Y" %} Nonogram - 100 days of code challenge</p>
+        </footer>
+    </body>
 </html>
