@@ -19,6 +19,7 @@ This web application will be your go-to platform for generating logical puzzles 
 
 ### Current Solutions:
 Currently available **websites** that delve into the topic of logic puzzles typically don't limit themselves to just nonograms. You can find many other types of logic puzzles there. Below are examples of such websites:
+* [Nonograms](https://www.nonograms.org/): Site fully dedicated to Japanese crosswords, including black-and-white and color variations.
 
 * [Picross Nonogram](https://www.puzzle-nonograms.com/): This is a popular online tool for solving logic puzzles, including nonograms.
 
