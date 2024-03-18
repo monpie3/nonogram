@@ -10,15 +10,19 @@
         <title>
             {% block page_title %}Nonogram{% endblock %}
         </title>
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.3/dist/full.min.css"
+              rel="stylesheet"
+              type="text/css" />
+        <script src="https://cdn.tailwindcss.com"></script>
         <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
     </head>
     <body>
-        <nav>
-            <a href="{% url 'index' %}">Puzzles</a>
-            <a href="{% url 'instruction' %}">Instruction</a>
+        <nav class="navbar bg-slate-800 shadow-md">
+            <a class="btn btn-ghost" href="{% url 'index' %}">Puzzles</a>
+            <a class="btn btn-ghost" href="{% url 'instruction' %}">Instruction</a>
         </nav>
         {% block content %}{% endblock %}
-        <footer>
+        <footer class="footer footer-center p-4 bg-slate-800">
             <p>© {% now "Y" %} Nonogram - 100 days of code challenge</p>
         </footer>
     </body>
