@@ -7,7 +7,8 @@
 
 This web application will be your go-to platform for generating logical puzzles for problem-solving. My aim is to create images that not only serve as puzzles but also convey meaningful representations once they are solved.
 
-## Key Features To Implement:
+---
+### Key Features To Implement:
 🖼️ **Puzzle Generation and Solving:** Generate puzzles and solve them directly on the platform to sharpen your logical thinking skills.
 
 🔍 **Hint Assistance:** Stuck on a puzzle? Request a hint to nudge you in the right direction.
@@ -16,6 +17,7 @@ This web application will be your go-to platform for generating logical puzzles 
 
 📸 **Upload Your Puzzles:** Upload images of physical logic puzzles, whether it's a snapshot of a paper puzzle or a hand-drawn challenge. Seek hints or complete solutions along with detailed analyses.
 
+----
 
 ### Current Solutions:
 Currently available **websites** that delve into the topic of logic puzzles typically don't limit themselves to just nonograms. You can find many other types of logic puzzles there. Below are examples of such websites:
@@ -32,7 +34,9 @@ However, **mobile applications** are more narrowly dedicated to one type of puzz
 ### Technologies:
 I want to explore **django-silk** for monitoring and profiling, **tailwind** as CSS framework and **three.js** - 3D graphics JavaScript library.
 
-### Launch Project Locally
+---
+
+### Launch Project Locally:
 
 It's highly recommended to use a virtual environment when working with third-party packages to ensure dependencies are managed effectively.
 
@@ -40,7 +44,16 @@ It's highly recommended to use a virtual environment when working with third-par
 
     For instructions on setting up a virtual environment, click [here](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#create-and-use-virtual-environments).
 
-1. Package Installation:
+1. Repository Cloning.
+
+    `git clone https://github.com/monpie3/nonogram.git`
+
+
+2. Directory Change.
+
+    `cd nonogram`
+
+3. Package Installation.
 
 * For the minimum set of packages required to run the project:
 
@@ -49,3 +62,16 @@ It's highly recommended to use a virtual environment when working with third-par
 * For development purposes, including additional packages:
 
     `pip install -e .'[dev]'`
+
+4. Environmental Variable Configuration.
+
+    Rename `.env.template` to `.env` and fill in all the environmental variables.
+
+5. Project Launch.
+
+    `python manage.py runserver`
+
+
+Project will run on http://127.0.0.1:8000/
+
+---
