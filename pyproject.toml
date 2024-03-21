@@ -10,7 +10,7 @@ name = "nonogram"
 version = "0.1.0"
 readme = "README.md"
 dependencies = [
-    "Django==5.0.2",
+    "Django==5.0.3",
     "djangorestframework==3.15.0",
     "drf-spectacular==0.27.1",
 ]
