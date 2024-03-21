@@ -32,7 +32,25 @@ Currently available **websites** that delve into the topic of logic puzzles typi
 However, **mobile applications** are more narrowly dedicated to one type of puzzle. For example, [Nonogram.com - Łamigłówki](https://play.google.com/store/apps/details?id=com.easybrain.nonogram&hl=pl&gl=US)  has a rating of 4.1 and 50 million downloads. A downside in this category of solutions is often the advertisements, which can disrupt the solving of puzzles.
 
 ### Technologies:
-I want to explore **django-silk** for monitoring and profiling, **tailwind** as CSS framework and **three.js** - 3D graphics JavaScript library.
+
+[`tailwind`](https://tailwindcss.com/docs/) → CSS framework
+
+[`daisyUI`](https://daisyui.com/docs/) → A component library for Tailwind CSS
+
+[`three.js`](https://threejs.org/docs/) → 3D graphics JavaScript library
+
+[`Django`](https://docs.djangoproject.com/) → Web framework
+
+[`Django REST Framework`](https://www.django-rest-framework.org/) → Build REST APIs
+
+[`django-silk`](https://silk.readthedocs.io/en/latest/) → Monitoring and profiling
+
+[`drf-spectacular`](https://drf-spectacular.readthedocs.io/en/latest/) → Automated API Documentation
+
+[`MongoDB`](https://www.mongodb.com/compatibility/mongodb-and-django) → Database
+
+[`GitHub Actions`](https://docs.github.com/en/actions) & [`Pre-Commit`](https://pre-commit.com/) → Testing and Linting
+
 
 ---
 
