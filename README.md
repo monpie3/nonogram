@@ -47,7 +47,7 @@ However, **mobile applications** are more narrowly dedicated to one type of puzz
 
 [`drf-spectacular`](https://drf-spectacular.readthedocs.io/en/latest/) → Automated API Documentation
 
-[`MongoDB`](https://www.mongodb.com/compatibility/mongodb-and-django) → Database
+[`PostgreSQl`](https://www.postgresql.org/docs/) → Database
 
 [`GitHub Actions`](https://docs.github.com/en/actions) & [`Pre-Commit`](https://pre-commit.com/) → Testing and Linting
 
