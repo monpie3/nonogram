@@ -28,6 +28,7 @@ dev = [
 ]
 deploy = [
     "gunicorn==21.2.0",
+    "whitenoise[brotli]==6.0.0",
 ]
 
 [tool.ruff]
