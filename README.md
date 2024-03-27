@@ -53,6 +53,13 @@ However, **mobile applications** are more narrowly dedicated to one type of puzz
 
 
 ---
+### Deployment:
+
+You can see DEMO here → [🚀](https://nonogram-hfdi.onrender.com/)
+
+[Render](https://docs.render.com/deploy-django) - used for deploying Django app.
+
+Postgres Database with [Railway](https://dev.to/dennisivy11/easiest-django-postgres-connection-ever-with-railway-11h6).
 
 ### Launch Project Locally:
 
