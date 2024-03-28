@@ -8,60 +8,17 @@
 This web application will be your go-to platform for generating logical puzzles for problem-solving. My aim is to create images that not only serve as puzzles but also convey meaningful representations once they are solved.
 
 ---
-### Key Features To Implement:
-🖼️ **Puzzle Generation and Solving:** Generate puzzles and solve them directly on the platform to sharpen your logical thinking skills.
+### Deployment
 
-🔍 **Hint Assistance:** Stuck on a puzzle? Request a hint to nudge you in the right direction.
+[DEMO](https://nonogram-hfdi.onrender.com/) 🚀
 
-🏆 **Hall of Fame:** Explore a showcase of solved challenges and celebrate your achievements.
 
-📸 **Upload Your Puzzles:** Upload images of physical logic puzzles, whether it's a snapshot of a paper puzzle or a hand-drawn challenge. Seek hints or complete solutions along with detailed analyses.
-
-----
-
-### Current Solutions:
-Currently available **websites** that delve into the topic of logic puzzles typically don't limit themselves to just nonograms. You can find many other types of logic puzzles there. Below are examples of such websites:
-* [Nonograms](https://www.nonograms.org/): Site fully dedicated to Japanese crosswords, including black-and-white and color variations.
-
-* [Picross Nonogram](https://www.puzzle-nonograms.com/): This is a popular online tool for solving logic puzzles, including nonograms.
-
-* [Griddlers Plus](https://www.griddlers.net/): Another website offering a wide selection of logic puzzles to solve online.
-
-* [Janko At WarpZone](http://www.janko.at/Raetsel/): This Anglo-German website contains a collection of logic puzzles, including nonograms, griddlers, and others, which can be printed or solved online.
-
-However, **mobile applications** are more narrowly dedicated to one type of puzzle. For example, [Nonogram.com - Łamigłówki](https://play.google.com/store/apps/details?id=com.easybrain.nonogram&hl=pl&gl=US)  has a rating of 4.1 and 50 million downloads. A downside in this category of solutions is often the advertisements, which can disrupt the solving of puzzles.
-
-### Technologies:
-
-[`tailwind`](https://tailwindcss.com/docs/) → CSS framework
-
-[`daisyUI`](https://daisyui.com/docs/) → A component library for Tailwind CSS
-
-[`three.js`](https://threejs.org/docs/) → 3D graphics JavaScript library
-
-[`Django`](https://docs.djangoproject.com/) → Web framework
-
-[`Django REST Framework`](https://www.django-rest-framework.org/) → Build REST APIs
-
-[`django-silk`](https://silk.readthedocs.io/en/latest/) → Monitoring and profiling
-
-[`drf-spectacular`](https://drf-spectacular.readthedocs.io/en/latest/) → Automated API Documentation
-
-[`PostgreSQl`](https://www.postgresql.org/docs/) → Database
-
-[`GitHub Actions`](https://docs.github.com/en/actions) & [`Pre-Commit`](https://pre-commit.com/) → Testing and Linting
+This project is deployed on [Render](https://docs.render.com/deploy-django), with the [database](https://dev.to/dennisivy11/easiest-django-postgres-connection-ever-with-railway-11h6) hosted on Railway.
 
 
 ---
-### Deployment:
 
-You can see DEMO here → [🚀](https://nonogram-hfdi.onrender.com/)
-
-[Render](https://docs.render.com/deploy-django) - used for deploying Django app.
-
-Postgres Database with [Railway](https://dev.to/dennisivy11/easiest-django-postgres-connection-ever-with-railway-11h6).
-
-### Launch Project Locally:
+### Launch Project Locally
 
 It's highly recommended to use a virtual environment when working with third-party packages to ensure dependencies are managed effectively.
 
@@ -100,3 +57,33 @@ It's highly recommended to use a virtual environment when working with third-par
 Project will run on http://127.0.0.1:8000/
 
 ---
+### Key Features To Implement
+- [ ] 🖼️ **Puzzle Generation and Solving:** Generate puzzles and solve them directly on the platform to sharpen your logical thinking skills.
+
+- [ ] 🔍 **Hint Assistance:** Stuck on a puzzle? Request a hint to nudge you in the right direction.
+
+- [ ] 🏆 **Hall of Fame:** Explore a showcase of solved challenges and celebrate your achievements.
+
+- [ ] 📸 **Upload Your Puzzles:** Upload images of physical logic puzzles, whether it's a snapshot of a paper puzzle or a hand-drawn challenge. Seek hints or complete solutions along with detailed analyses.
+
+---
+
+### Used Technologies
+
+[`tailwind`](https://tailwindcss.com/docs/) → CSS framework
+
+[`daisyUI`](https://daisyui.com/docs/) → A component library for Tailwind CSS
+
+[`three.js`](https://threejs.org/docs/) → 3D graphics JavaScript library
+
+[`Django`](https://docs.djangoproject.com/) → Python web framework
+
+[`Django REST Framework`](https://www.django-rest-framework.org/) → Toolkit for building REST APIs in Django
+
+[`django-silk`](https://silk.readthedocs.io/en/latest/) → Profiling and monitoring tool for Django
+
+[`drf-spectacular`](https://drf-spectacular.readthedocs.io/en/latest/) → Automated API Documentation for Django REST Framework
+
+[`PostgreSQL`](https://www.postgresql.org/docs/) → Open-source relational database system
+
+[`GitHub Actions`](https://docs.github.com/en/actions) & [`Pre-Commit`](https://pre-commit.com/) → Used for testing and linting
