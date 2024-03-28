@@ -140,7 +140,9 @@ if not DEBUG:
     STATIC_ROOT = BASE_DIR / "staticfiles"
     # Enable the WhiteNoise storage backend, which compresses static files to reduce disk use
     # and renames the files with unique names for each version to support long-term caching
-    STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+    # STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+else:
+    STATICFILES_DIRS = [BASE_DIR / "static"]
 
 
 # Default primary key field type
@@ -151,3 +153,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 REST_FRAMEWORK = {
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
 }
+
+DEBUG_PROPAGATE_EXCEPTIONS = True
