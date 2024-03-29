@@ -13,7 +13,7 @@ This web application will be your go-to platform for generating logical puzzles 
 [DEMO](https://nonogram-hfdi.onrender.com/) 🚀
 
 
-This project is deployed on [Render](https://docs.render.com/deploy-django), with the [database](https://dev.to/dennisivy11/easiest-django-postgres-connection-ever-with-railway-11h6) hosted on Railway.
+This project is deployed on [Render](https://dev.to/vincod/django-on-render-1g9a), with the database hosted on [Railway](https://dev.to/dennisivy11/easiest-django-postgres-connection-ever-with-railway-11h6).
 
 
 ---
