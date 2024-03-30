@@ -17,13 +17,15 @@
         <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
     </head>
     <body>
-        <nav class="navbar bg-slate-800 shadow-md">
-            <a class="btn btn-ghost" href="{% url 'index' %}">Puzzles</a>
-            <a class="btn btn-ghost" href="{% url 'instruction' %}">Instruction</a>
-        </nav>
-        {% block content %}{% endblock %}
-        <footer class="footer footer-center p-4 bg-slate-800">
-            <p>© {% now "Y" %} Nonogram - 100 days of code challenge</p>
-        </footer>
+        <div class="flex flex-col h-screen justify-between">
+            <nav class="navbar bg-slate-800 shadow-md">
+                <a class="btn btn-ghost" href="{% url 'index' %}">Puzzles</a>
+                <a class="btn btn-ghost" href="{% url 'instruction' %}">Instruction</a>
+            </nav>
+            {% block content %}{% endblock %}
+            <footer class="footer footer-center p-4 bg-slate-800">
+                <p>© {% now "Y" %} Nonogram - 100 days of code challenge</p>
+            </footer>
+        </div>
     </body>
 </html>
