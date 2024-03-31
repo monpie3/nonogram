@@ -32,3 +32,4 @@ urlpatterns = [
 ]
 
 urlpatterns += staticfiles_urlpatterns()
+urlpatterns += [path("silk/", include("silk.urls", namespace="silk"))]
