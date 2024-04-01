@@ -160,5 +160,3 @@ REST_FRAMEWORK = {
         "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"
     ],
 }
-
-DEBUG_PROPAGATE_EXCEPTIONS = True
