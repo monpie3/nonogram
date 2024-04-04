@@ -160,3 +160,13 @@ REST_FRAMEWORK = {
         "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"
     ],
 }
+
+# Silk Configuration
+SILKY_AUTHORISATION = True
+
+
+def only_in_debug_mode(_):
+    return DEBUG
+
+
+SILKY_PERMISSIONS = only_in_debug_mode
