@@ -1,4 +1,4 @@
-{% load static %}
+{% load static tailwind_tags %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -13,7 +13,7 @@
         <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.3/dist/full.min.css"
               rel="stylesheet"
               type="text/css" />
-        <script src="https://cdn.tailwindcss.com"></script>
+		{% tailwind_css %}
         <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
     </head>
     <body>
