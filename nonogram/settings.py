@@ -49,9 +49,6 @@ INSTALLED_APPS = [
     "rest_framework",
     "drf_spectacular",
     "silk",
-    "tailwind",
-    "theme",
-    "django_browser_reload",
 ]
 
 MIDDLEWARE = [
@@ -64,7 +61,6 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "silk.middleware.SilkyMiddleware",
-    "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 ROOT_URLCONF = "nonogram.urls"
@@ -174,10 +170,3 @@ def only_in_debug_mode(_):
 
 
 SILKY_PERMISSIONS = only_in_debug_mode
-
-# Tailwind Configuration
-INTERNAL_IPS = [
-    "127.0.0.1",
-]
-
-TAILWIND_APP_NAME = "theme"

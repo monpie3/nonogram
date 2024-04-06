@@ -16,7 +16,6 @@ dependencies = [
     "psycopg2-binary==2.9.9",
     "python-dotenv==1.0.1",
     "django-silk==5.1.0",
-    "django-tailwind[reload]==3.8.0",
 ]
 
 [project.optional-dependencies]
