@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "drf_spectacular",
     "silk",
+    "django_browser_reload",
 ]
 
 MIDDLEWARE = [
@@ -61,6 +62,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "silk.middleware.SilkyMiddleware",
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 ROOT_URLCONF = "nonogram.urls"

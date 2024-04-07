@@ -16,6 +16,7 @@ dependencies = [
     "psycopg2-binary==2.9.9",
     "python-dotenv==1.0.1",
     "django-silk==5.1.0",
+    "django-browser-reload==1.12.1",
 ]
 
 [project.optional-dependencies]
