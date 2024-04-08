@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     "drf_spectacular",
     "silk",
     "django_browser_reload",
+    "debug_toolbar",
 ]
 
 MIDDLEWARE = [
@@ -63,6 +64,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "silk.middleware.SilkyMiddleware",
     "django_browser_reload.middleware.BrowserReloadMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = "nonogram.urls"
@@ -172,3 +174,8 @@ def only_in_debug_mode(_):
 
 
 SILKY_PERMISSIONS = only_in_debug_mode
+
+# Configure Internal IPs
+INTERNAL_IPS = [
+    "127.0.0.1",
+]

@@ -32,5 +32,8 @@ urlpatterns = [
 ]
 
 urlpatterns += staticfiles_urlpatterns()
-urlpatterns += [path("silk/", include("silk.urls", namespace="silk"))]
-urlpatterns += [path("__reload__/", include("django_browser_reload.urls"))]
+urlpatterns += [
+    path("silk/", include("silk.urls", namespace="silk")),
+    path("__reload__/", include("django_browser_reload.urls")),
+    path("__debug__/", include("debug_toolbar.urls")),
+]

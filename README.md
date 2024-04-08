@@ -87,7 +87,7 @@ Project will run on http://127.0.0.1:8000/
 
 [`Django REST Framework`](https://www.django-rest-framework.org/) → Toolkit for building REST APIs in Django
 
-[`django-silk`](https://silk.readthedocs.io/en/latest/) → Profiling and monitoring tool for Django
+[`django-silk`](https://silk.readthedocs.io/en/latest/) &  [`django-debug-toolbar`](hhttps://django-debug-toolbar.readthedocs.io/en/latest/installation.html) → Profiling and monitoring tool for Django
 
 [`drf-spectacular`](https://drf-spectacular.readthedocs.io/en/latest/) → Automated API Documentation for Django REST Framework
 

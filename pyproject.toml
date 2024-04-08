@@ -18,6 +18,7 @@ dependencies = [
     "django-silk==5.1.0",
     "django-browser-reload==1.12.1",
     "whitenoise==6.0.0",
+    "django-debug-toolbar==4.3.0",
 ]
 
 [project.optional-dependencies]
