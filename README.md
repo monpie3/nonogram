@@ -56,6 +56,13 @@ It's highly recommended to use a virtual environment when working with third-par
 
 Project will run on http://127.0.0.1:8000/
 
+
+6. For development purposes, you can start also [Django Tailwind](https://django-tailwind.readthedocs.io/en/latest/usage.html) in development mode.
+
+    `cd jstoolchains`
+
+    `python manage.py tailwind start`
+
 ---
 ### Key Features To Implement
 - [ ] 🖼️ **Puzzle Generation and Solving:** Generate puzzles and solve them directly on the platform to sharpen your logical thinking skills.
