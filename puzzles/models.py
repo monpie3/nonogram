@@ -11,7 +11,9 @@ DIFFICULTY_CHOICES = [
 
 class Nonogram(models.Model):
     title = models.CharField(max_length=100)
+    image = models.ImageField(upload_to="nonogram_images/")
     puzzle_data = models.JSONField()
+    puzzle_solution = models.JSONField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     difficulty_level = models.IntegerField(choices=DIFFICULTY_CHOICES)

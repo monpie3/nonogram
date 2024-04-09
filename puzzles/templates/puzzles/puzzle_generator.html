@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_title %}Generate Nonogram{% endblock %}
+{% block content %}
+    <div class="puzzle-genarator p-10">
+        <h1>Generate Nonogram from Image</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn" type="submit">Generate Nonogram</button>
+        </form>
+    </div>
+{% endblock %}
