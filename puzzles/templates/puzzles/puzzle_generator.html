@@ -6,8 +6,15 @@
         <h1>Generate Nonogram from Image</h1>
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            {{ form.as_p }}
+            <!-- {{ form.as_p }} -->
+            <input type="file"
+                   id="id_image"
+                   name="image"
+                   accept="image/*"
+                   onchange="previewImage(event)">
+            <div id="image-preview"></div>
             <button class="btn" type="submit">Generate Nonogram</button>
         </form>
     </div>
+    <script src="{% static 'js/preview.js' %}"></script>
 {% endblock %}
