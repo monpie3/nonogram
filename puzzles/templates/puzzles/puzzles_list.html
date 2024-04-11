@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block page_title %}Nonogram list{% endblock %}
+{% block content %}
+    <h1>Nonograms</h1>
+    <ul>
+        {% for nonogram in nonograms %}
+            <li><a href="{% url 'nonogram_detail' nonogram.id %}">{{ nonogram.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

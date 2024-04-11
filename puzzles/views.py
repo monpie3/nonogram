@@ -27,7 +27,7 @@ def generate_nonogram(request):
 
 
 def puzzles_list(request):
-    nonograms = Nonogram.objects.all()
+    nonograms = Nonogram.objects.all().values("id", "title")
     return render(request, "puzzles/puzzles_list.html", {"nonograms": nonograms})
 
 
