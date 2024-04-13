@@ -26,7 +26,7 @@ def generate_nonogram_from_image(image_path):
 
     img_array = np.array(img)
 
-    nonogram = np.zerod(img_array.shape, dtype=np.uint8)
+    nonogram = np.zeros(img_array.shape, dtype=np.uint8)
     threshold = 20  # Threshold for edge detection
 
     for y in range(img_array.shape[0]):
