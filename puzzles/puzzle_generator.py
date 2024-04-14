@@ -4,6 +4,24 @@ import numpy as np
 from PIL import Image, ImageFilter
 
 
+def erode(cycles, image):
+    for _ in range(cycles):
+        image = image.filter(ImageFilter.MinFilter(3))
+    return image
+
+
+def dilate(cycles, image):
+    for _ in range(cycles):
+        image = image.filter(ImageFilter.MaxFilter(3))
+    return image
+
+
+def smooth(cycles, image):
+    for _ in range(cycles):
+        image = image.filter(ImageFilter.SMOOTH)
+    return image
+
+
 def generate_nonogram_from_image(image_path):
     logging.info("Generating nonogram from image: %s", image_path)
 
@@ -16,26 +34,23 @@ def generate_nonogram_from_image(image_path):
 
     # You can obtain a better outcome by applying the ImageFilter.SMOOTH filter
     # Before finding the edges
-    img = img.filter(ImageFilter.SMOOTH)
+    img = smooth(5, img)
 
     # Detecting Edges on the Image using the argument ImageFilter.FIND_EDGES
     img = img.filter(ImageFilter.FIND_EDGES)
 
     # Saving the Image
-    img.save("static/images/img_edges.jpg")
+    img.save("static/images/1_img_edges.jpg")
 
-    img_array = np.array(img)
-
-    nonogram = np.zeros(img_array.shape, dtype=np.uint8)
     threshold = 20  # Threshold for edge detection
 
-    for y in range(img_array.shape[0]):
-        for x in range(img_array.shape[1]):
-            if img_array[y, x] < threshold:
-                nonogram[y, x] = 0
-            else:
-                nonogram[y, x] = 255
+    # Threshold
+    img = img.point(lambda p: 255 if p < threshold else 0)
 
-    Image.fromarray(nonogram).save("static/images/nonogram.jpg")
+    # Convert the image to binary
+    img = img.convert("1")
+
+    img = erode(3, img)
+    img = dilate(1, img)
 
     return "static/images/temp_edges.jpg"
