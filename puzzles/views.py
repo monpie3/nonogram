@@ -19,7 +19,7 @@ def generate_nonogram(request):
         if form.is_valid():
             image_path = form.cleaned_data["image"]
             nonogram_instance = generate_nonogram_from_image(image_path)
-            return redirect("puzzles/puzzle_detail.html", pk=nonogram_instance.pk)
+            return redirect("puzzle_detail", puzzle_id=nonogram_instance.pk)
     else:
         form = NonogramForm()
 
@@ -31,6 +31,6 @@ def puzzles_list(request):
     return render(request, "puzzles/puzzles_list.html", {"nonograms": nonograms})
 
 
-def puzzle_detail(request, nonogram_id):
-    nonogram = Nonogram.objects.get(id=nonogram_id)
+def puzzle_detail(request, puzzle_id):
+    nonogram = Nonogram.objects.get(id=puzzle_id)
     return render(request, "puzzles/puzzle_detail.html", {"nonogram": nonogram})
