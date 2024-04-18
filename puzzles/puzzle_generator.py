@@ -1,8 +1,9 @@
-import logging
 from enum import Enum
 
 import numpy as np
 from PIL import Image, ImageFilter
+
+from puzzles.models import Nonogram
 
 
 class PixelColor(Enum):
@@ -28,6 +29,10 @@ def smooth(cycles, image):
     return image
 
 
+def threshold(threshold, image):
+    return image.point(lambda pixel: 0 if pixel > threshold else 255)
+
+
 def count_black_pixels(image_array):
     row_counts = []
 
@@ -48,20 +53,10 @@ def count_black_pixels(image_array):
     return row_counts
 
 
-def convert_img_to_grid(image):
-    image_array = np.array(image)
-    row_counts = count_black_pixels(image_array)
-    col_counts = count_black_pixels(image_array.T)
-
-    return row_counts, col_counts
-
-
-def generate_nonogram_from_image(image_path):
-    logging.info("Generating nonogram from image: %s", image_path)
-
-    # Load image
-    img = Image.open(image_path)
-
+def transform_img(img):
+    """
+    Transform the image to a binary image with edges detected.
+    """
     # Converting the image to grayscale, as edge detection
     # requires input image to be of mode = Grayscale (L)
     img = img.convert("L")
@@ -73,13 +68,10 @@ def generate_nonogram_from_image(image_path):
     # Detecting Edges on the Image using the argument ImageFilter.FIND_EDGES
     img = img.filter(ImageFilter.FIND_EDGES)
 
-    # Saving the Image
-    img.save("static/images/1_img_edges.jpg")
-
     threshold = 20  # Threshold for edge detection
 
     # Threshold
-    img = img.point(lambda p: 255 if p < threshold else 0)
+    img = threshold(20, img)
 
     # Convert the image to binary
     img = img.convert("1")
@@ -87,4 +79,46 @@ def generate_nonogram_from_image(image_path):
     img = erode(3, img)
     img = dilate(1, img)
 
-    return "static/images/temp_edges.jpg"
+    return img
+
+
+def convert_img_to_grid(img):
+    """
+    Grup the black pixels in the image to form the nonogram data.
+    """
+    img_array = np.array(img)
+    row_counts = count_black_pixels(img_array)
+    col_counts = count_black_pixels(img_array.T)
+
+    return row_counts, col_counts
+
+
+def generate_nonogram_from_image(img_path):
+    """
+    Generate nonogram data from an image and save it in the database.
+
+    Args:
+        image_path (str): The path to the image file.
+
+    Returns:
+        Nonogram: The Nonogram instance with generated data.
+    """
+
+    # Load image
+    img = Image.open(img_path)
+
+    # Transform the image
+    img = transform_img(img)
+
+    # Create nonogram data
+    row_counts, col_counts = convert_img_to_grid(img)
+
+    nonogram_data = {"rows": row_counts, "columns": col_counts}
+
+    # Create a new Nonogram instance
+    nonogram_instance = Nonogram()
+    # Set the nonogram data and save the Nonogram instance
+    nonogram_instance.puzzle_data = nonogram_data
+    nonogram_instance.save()
+
+    return nonogram_instance
