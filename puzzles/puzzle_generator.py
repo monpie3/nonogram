@@ -77,9 +77,7 @@ def transform_img(img):
     img = img.convert("1")
 
     img = erode(3, img)
-    img = dilate(1, img)
-
-    return img
+    return dilate(1, img)
 
 
 def convert_img_to_grid(img):
