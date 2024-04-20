@@ -67,6 +67,16 @@ lint.ignore = [
     "E501",  # line too long, handled by black
 ]
 
+[tool.ruff.lint.per-file-ignores] # https://github.com/astral-sh/ruff/issues/4368
+"**/tests.py" = [
+    "S101", # asserts allowed in tests
+    "ARG", # Unused function args -> fixtures nevertheless are functionally relevant
+    "FBT", # Don't care about booleans as positional arguments in tests, e.g. via @pytest.mark.parametrize()
+    "PLR2004", # Magic value used in comparison
+    "S311", # Standard pseudo-random generators are not suitable for cryptographic purposes
+]
+
+
 # https://docs.astral.sh/ruff/rules/
 
 
