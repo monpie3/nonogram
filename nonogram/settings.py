@@ -165,6 +165,8 @@ REST_FRAMEWORK = {
     ],
 }
 
+DEBUG_PROPAGATE_EXCEPTIONS = True
+
 # Silk Configuration
 SILKY_AUTHORISATION = True
 
