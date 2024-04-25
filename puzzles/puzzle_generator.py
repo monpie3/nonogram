@@ -68,8 +68,6 @@ def transform_img(img):
     # Detecting Edges on the Image using the argument ImageFilter.FIND_EDGES
     img = img.filter(ImageFilter.FIND_EDGES)
 
-    threshold = 20  # Threshold for edge detection
-
     # Threshold
     img = threshold(20, img)
 
