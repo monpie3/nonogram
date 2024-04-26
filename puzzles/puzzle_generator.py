@@ -53,6 +53,18 @@ def count_black_pixels(image_array):
     return row_counts
 
 
+def resize_img(img, max_width):
+    current_width = img.size[0]
+
+    if current_width <= max_width:
+        return img
+
+    current_hight = img.size[1]
+    wpercent = max_width / float(current_width)
+    hsize = int(float(current_hight) * float(wpercent))
+    return img.resize((max_width, hsize), Image.Resampling.LANCZOS)
+
+
 def transform_img(img):
     """
     Transform the image to a binary image with edges detected.
@@ -102,6 +114,9 @@ def generate_nonogram_from_image(img_path):
 
     # Load image
     img = Image.open(img_path)
+
+    # Resize image
+    img = resize_img(img, max_width=300)
 
     # Transform the image
     img = transform_img(img)
