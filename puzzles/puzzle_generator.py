@@ -116,7 +116,7 @@ def generate_nonogram_from_image(img_path):
     img = Image.open(img_path)
 
     # Resize image
-    img = resize_img(img, max_width=300)
+    img = resize_img(img, max_width=100)
 
     # Transform the image
     img = transform_img(img)
