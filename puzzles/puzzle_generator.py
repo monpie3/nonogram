@@ -11,25 +11,25 @@ class PixelColor(Enum):
     BLACK = 0
 
 
-def erode(cycles, image):
+def erode(image, cycles):
     for _ in range(cycles):
         image = image.filter(ImageFilter.MinFilter(3))
     return image
 
 
-def dilate(cycles, image):
+def dilate(image, cycles):
     for _ in range(cycles):
         image = image.filter(ImageFilter.MaxFilter(3))
     return image
 
 
-def smooth(cycles, image):
+def smooth(image, cycles):
     for _ in range(cycles):
         image = image.filter(ImageFilter.SMOOTH)
     return image
 
 
-def threshold(threshold, image):
+def threshold(image, threshold):
     return image.point(lambda pixel: 0 if pixel > threshold else 255)
 
 
@@ -75,19 +75,19 @@ def transform_img(img):
 
     # You can obtain a better outcome by applying the ImageFilter.SMOOTH filter
     # Before finding the edges
-    img = smooth(5, img)
+    img = smooth(img, cycles=5)
 
     # Detecting Edges on the Image using the argument ImageFilter.FIND_EDGES
     img = img.filter(ImageFilter.FIND_EDGES)
 
     # Threshold
-    img = threshold(20, img)
+    img = threshold(img, threshold=20)
 
     # Convert the image to binary
     img = img.convert("1")
 
-    img = erode(3, img)
-    return dilate(1, img)
+    img = erode(img, cycles=3)
+    return dilate(img, cycles=1)
 
 
 def convert_img_to_grid(img):
