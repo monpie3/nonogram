@@ -6,12 +6,16 @@
         <h1>Generate Nonogram from Image</h1>
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            <label for="id_image">Select file:</label>
+            <label for="title" class="label">Title:</label>
+            <input type="text" id="title" name="title" class="input" required>
+            <label for="image" class="label">Select file:</label>
             <input type="file"
-                   id="id_image"
+                   id="image"
                    name="image"
+                   class="input"
                    accept="image/*"
-                   onchange="previewImage(event)">
+                   onchange="previewImage(event)"
+                   required>
             <div id="image-preview"></div>
             <button id="generate-btn" class="btn" type="submit">
                 <svg id="spinner"

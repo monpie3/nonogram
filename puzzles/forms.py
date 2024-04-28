@@ -8,4 +8,4 @@ from .models import Nonogram
 class NonogramForm(forms.ModelForm):
     class Meta:
         model = Nonogram
-        fields = ["image"]
+        fields = ["title", "image"]
