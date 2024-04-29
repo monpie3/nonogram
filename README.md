@@ -97,3 +97,18 @@ Project will run on http://127.0.0.1:8000/
 [`PostgreSQL`](https://www.postgresql.org/docs/) → Open-source relational database system
 
 [`GitHub Actions`](https://docs.github.com/en/actions) & [`Pre-Commit`](https://pre-commit.com/) → Used for testing and linting
+
+---
+### Statistics
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=monpie3_nonogram&metric=bugs)](https://sonarcloud.io/summary/new_code?id=monpie3_nonogram)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=monpie3_nonogram&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=monpie3_nonogram)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=monpie3_nonogram&metric=coverage)](https://sonarcloud.io/summary/new_code?id=monpie3_nonogram)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=monpie3_nonogram&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=monpie3_nonogram)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=monpie3_nonogram&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=monpie3_nonogram)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=monpie3_nonogram&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=monpie3_nonogram)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=monpie3_nonogram&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=monpie3_nonogram)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=monpie3_nonogram&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=monpie3_nonogram)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=monpie3_nonogram&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=monpie3_nonogram)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=monpie3_nonogram&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=monpie3_nonogram)
+
+Inspired by -> https://github.com/PiotrFerenc/mash2
