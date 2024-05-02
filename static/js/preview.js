@@ -1,6 +1,6 @@
 function previewImage(event) {
     const input = event.target;
-    if (input.files && input.files[0]) {
+    if (input.files?.[0]) {
         const reader = new FileReader();
         reader.onload = function (e) {
             const imagePreview = document.getElementById('image-preview');
