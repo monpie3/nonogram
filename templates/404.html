@@ -1,1 +1,7 @@
-This is a custom 404 page!
+{% extends "base.html" %}
+{% load static %}
+{% block page_title %}Wrong address{% endblock %}
+{% block content %}
+    <h1>Ooops!</h1>
+    <h2>I cannot find the site you requested!</h2>
+{% endblock %}
