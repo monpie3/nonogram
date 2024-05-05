@@ -1,1 +1,8 @@
-This is a custom 500 page!
+{% extends "base.html" %}
+{% load static %}
+{% block page_title %}Internal Server Error{% endblock %}
+{% block content %}
+    <h1>Ooops!</h1>
+    <h2>We're experiencing some technical difficulties.</h2>
+    <p>Please try again later, or contact us at [mpierzc@gmail.com](mailto:mpierzc@gmail.com) if the problem persists.</p>
+{% endblock %}
