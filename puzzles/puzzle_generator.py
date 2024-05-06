@@ -11,29 +11,29 @@ class PixelColor(Enum):
     BLACK = 0
 
 
-def erode(image, cycles):
+def erode(image: Image.Image, cycles: int) -> Image.Image:
     for _ in range(cycles):
         image = image.filter(ImageFilter.MinFilter(3))
     return image
 
 
-def dilate(image, cycles):
+def dilate(image: Image.Image, cycles: int) -> Image.Image:
     for _ in range(cycles):
         image = image.filter(ImageFilter.MaxFilter(3))
     return image
 
 
-def smooth(image, cycles):
+def smooth(image: Image.Image, cycles: int) -> Image.Image:
     for _ in range(cycles):
         image = image.filter(ImageFilter.SMOOTH)
     return image
 
 
-def threshold(image, threshold):
+def threshold(image: Image.Image, threshold: int) -> Image.Image:
     return image.point(lambda pixel: 0 if pixel > threshold else 255)
 
 
-def count_black_pixels(image_array):
+def count_black_pixels(image_array: np.ndarray) -> list[list[int]]:
     row_counts = []
 
     for row in image_array:
@@ -53,7 +53,7 @@ def count_black_pixels(image_array):
     return row_counts
 
 
-def resize_img(img, max_width):
+def resize_img(img: Image.Image, max_width: int) -> Image.Image:
     current_width = img.size[0]
 
     if current_width <= max_width:
@@ -65,7 +65,7 @@ def resize_img(img, max_width):
     return img.resize((max_width, hsize), Image.Resampling.LANCZOS)
 
 
-def transform_img(img):
+def transform_img(img: Image.Image) -> Image.Image:
     """
     Transform the image to a binary image with edges detected.
     """
@@ -90,7 +90,7 @@ def transform_img(img):
     return dilate(img, cycles=1)
 
 
-def convert_img_to_grid(img):
+def convert_img_to_grid(img: Image.Image):
     """
     Grup the black pixels in the image to form the nonogram data.
     """
@@ -101,7 +101,7 @@ def convert_img_to_grid(img):
     return row_counts, col_counts
 
 
-def generate_nonogram_from_image(img_path):
+def generate_nonogram_from_image(img_path: str) -> Nonogram:
     """
     Generate nonogram data from an image and save it in the database.
 
