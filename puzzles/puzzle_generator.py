@@ -3,6 +3,7 @@ from enum import Enum
 import numpy as np
 from PIL import Image, ImageFilter
 
+from puzzles.forms import NonogramForm
 from puzzles.models import Nonogram
 
 
@@ -101,16 +102,18 @@ def convert_img_to_grid(img: Image.Image):
     return row_counts, col_counts
 
 
-def generate_nonogram_from_image(img_path: str) -> Nonogram:
+def generate_nonogram_from_form(form: NonogramForm) -> Nonogram:
     """
     Generate nonogram data from an image and save it in the database.
 
     Args:
-        image_path (str): The path to the image file.
+        form (NonogramForm): The form containing the image.
 
     Returns:
         Nonogram: The Nonogram instance with generated data.
     """
+
+    img_path = form.cleaned_data["image"]
 
     # Load image
     img = Image.open(img_path)
@@ -126,10 +129,11 @@ def generate_nonogram_from_image(img_path: str) -> Nonogram:
 
     nonogram_data = {"rows": row_counts, "columns": col_counts}
 
-    # Create a new Nonogram instance
-    nonogram_instance = Nonogram()
-    # Set the nonogram data and save the Nonogram instance
+    # Create a new Nonogram instance, but don't save the instance yet
+    nonogram_instance = form.save(commit=False)
+    # Modify nonogram data field
     nonogram_instance.puzzle_data = nonogram_data
+    # Save the instance
     nonogram_instance.save()
 
     return nonogram_instance

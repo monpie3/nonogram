@@ -2,7 +2,7 @@ from django.shortcuts import redirect, render
 
 from puzzles.forms import NonogramForm
 from puzzles.models import Nonogram
-from puzzles.puzzle_generator import generate_nonogram_from_image
+from puzzles.puzzle_generator import generate_nonogram_from_form
 
 
 def index(request):
@@ -17,8 +17,7 @@ def generate_nonogram(request):
     if request.method == "POST":
         form = NonogramForm(request.POST, request.FILES)
         if form.is_valid():
-            image_path = form.cleaned_data["image"]
-            nonogram_instance = generate_nonogram_from_image(image_path)
+            nonogram_instance = generate_nonogram_from_form(form)
             return redirect("puzzle_detail", puzzle_id=nonogram_instance.pk)
     else:
         form = NonogramForm()
