@@ -1,4 +1,7 @@
 from django.db import models
+from PIL import Image
+
+from . import image_utilities
 
 DIFFICULTY_CHOICES = [
     (1, "★"),
@@ -21,3 +24,9 @@ class Nonogram(models.Model):
 
     def __str__(self):
         return f"{self.title} {self.difficulty_level}"
+
+    def save(self):
+        super().save()
+        img = Image.open(self.image.path)
+        img = image_utilities.resize_img(img, max_width=300)
+        img.save(self.image.path)
