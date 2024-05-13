@@ -2,9 +2,9 @@
 {% load static %}
 {% block page_title %}Generate Nonogram{% endblock %}
 {% block content %}
-    <div class="flex flex-column sm:flex-row justify-between min-h-80">
-        <div class="flex-column">
-            <h1>Generate nonogram from image</h1>
+    <div class="flex flex-col sm:flex-row sm:items-center">
+        <div class="flex-col">
+            <h1 class="text-xl font-bold">Generate nonogram from image</h1>
             <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 <label for="title" class="label">Title:</label>
@@ -17,7 +17,7 @@
                        accept="image/*"
                        onchange="previewImage(event)"
                        required>
-                <button id="generate-btn" class="btn block mt-5" type="submit">
+                <button id="generate-btn" class="btn block my-5" type="submit">
                     <svg id="spinner"
                          aria-hidden="true"
                          role="status"
@@ -30,10 +30,10 @@
                     </svg>
                     Generate Nonogram
                 </button>
-            </div>
-            <div id="image-preview"></div>
+            </form>
         </div>
-    </form>
+        <div id="image-preview" class="sm:ml-20 p-2"></div>
+    </div>
     <script>
         const spinner = document.getElementById('spinner');
         const generateBtn = document.getElementById('generate-btn');
