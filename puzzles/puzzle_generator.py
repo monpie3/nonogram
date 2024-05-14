@@ -34,15 +34,15 @@ def count_black_pixels(image_array: np.ndarray) -> list[list[int]]:
     return row_counts
 
 
-def convert_img_to_grid(img: Image.Image):
+def convert_img_to_clues(img: Image.Image):
     """
     Grup the black pixels in the image to form the nonogram data.
     """
     img_array = np.array(img)
-    row_counts = count_black_pixels(img_array)
-    col_counts = count_black_pixels(img_array.T)
+    row_clues = count_black_pixels(img_array)
+    col_clues = count_black_pixels(img_array.T)
 
-    return row_counts, col_counts
+    return row_clues, col_clues
 
 
 def generate_nonogram_from_form(form: NonogramForm) -> Nonogram:
@@ -68,9 +68,9 @@ def generate_nonogram_from_form(form: NonogramForm) -> Nonogram:
     img = image_utilities.transform_img(img)
 
     # Create nonogram data
-    row_counts, col_counts = convert_img_to_grid(img)
+    row_clues, col_clues = convert_img_to_clues(img)
 
-    nonogram_data = {"rows": row_counts, "columns": col_counts}
+    nonogram_data = {"rows": row_clues, "columns": col_clues}
 
     # Create a new Nonogram instance, but don't save the instance yet
     nonogram_instance = form.save(commit=False)

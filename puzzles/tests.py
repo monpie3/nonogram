@@ -29,7 +29,7 @@ class TestTransformImg(TestCase):
             [2],
         ]
 
-        row_counts, col_counts = puzzle_generator.convert_img_to_grid(image_array)
+        row_counts, col_counts = puzzle_generator.convert_img_to_clues(image_array)
 
         assert row_counts == expected_row_counts
         assert col_counts == expected_col_counts
