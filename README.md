@@ -96,8 +96,6 @@ Project will run on http://127.0.0.1:8000/
 
 [`daisyUI`](https://daisyui.com/docs/) → A component library for Tailwind CSS
 
-[`three.js`](https://threejs.org/docs/) → 3D graphics JavaScript library
-
 [`Django`](https://docs.djangoproject.com/) → Python web framework
 
 [`Django REST Framework`](https://www.django-rest-framework.org/) → Toolkit for building REST APIs in Django
