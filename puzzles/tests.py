@@ -5,7 +5,7 @@ from puzzles import puzzle_generator
 
 
 class TestTransformImg(TestCase):
-    def test_transform_img(self):
+    def test_convert_img_to_clues(self):
         image_array = np.array(
             [
                 [0, 0, 0, 1, 1, 1, 0, 0],
