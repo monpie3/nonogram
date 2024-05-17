@@ -4,7 +4,13 @@ function previewImage(event) {
         const reader = new FileReader();
         reader.onload = function (e) {
             const imagePreview = document.getElementById('image-preview');
-            imagePreview.innerHTML = `<img src="${e.target.result}" alt="Image Preview" style="max-height: 20rem;">`;
+
+            const imgSrc = e.target.result;
+            if (typeof imgSrc === 'string') {
+                imagePreview.innerHTML = `<img src="${imgSrc}" alt="Image Preview" style="max-height: 20rem;">`;
+            } else {
+                console.error('FileReader result is not a string:', result);
+            }
         };
         reader.readAsDataURL(input.files[0]);
     }
