@@ -62,7 +62,7 @@ def generate_nonogram_from_form(form: NonogramForm) -> Nonogram:
     img = Image.open(img_path)
 
     # Resize image
-    img = image_utilities.resize_img(img, max_width=100)
+    img = image_utilities.resize_img(img, max_width=30)
 
     # Transform the image
     img = image_utilities.transform_img(img)
