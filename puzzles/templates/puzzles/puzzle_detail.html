@@ -1,4 +1,15 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
     <h1>Nonogram - {{ nonogram.title }}</h1>
+    <img src="{{ nonogram.image.url }}" alt="source image">
+    <div id="tableContainer"></div>
+    <script src="{% static 'js/createGrid.js' %}"></script>
+    <script>
+        const rows = JSON.parse('{{ nonogram.puzzle_data.rows|escapejs }}');
+        const columns = JSON.parse('{{ nonogram.puzzle_data.columns|escapejs }}');
+
+        const container = document.getElementById('tableContainer');
+        container.appendChild(createGrid(rows, columns));
+    </script>
 {% endblock %}

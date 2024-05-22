@@ -5,3 +5,8 @@
 .hidden {
   display: none;
 }
+
+td {
+  width: 30px;
+  height: 30px;
+}
