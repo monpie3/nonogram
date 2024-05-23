@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
     <h1>Nonogram - {{ nonogram.title }}</h1>
-    <img src="{{ nonogram.image.url }}" alt="source image">
+    <img src="{{ nonogram.image.url }}" alt="Original reference for the nonogram puzzle">
     <div id="tableContainer"></div>
     <script src="{% static 'js/createGrid.js' %}"></script>
     <script>
