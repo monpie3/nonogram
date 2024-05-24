@@ -26,12 +26,14 @@ function createGrid(rowClues, columnClues) {
         const tr = document.createElement('tr');
         for (let j = 0; j < columnClues.length; j++) {
             const td = document.createElement('td');
-            if (columnClues[j].length > i) {
-                td.className = `col_header_${j}_${i} `;
-                td.innerHTML = `<div>${columnClues[j][columnClues[j].length - i - 1]}</div>`;
-            } else {
+            if (i < maxColumnHeight - columnClues[j].length) {
+                // fill with empty cells if there is space before the clues
                 td.className = 'col_header_empty ';
                 td.innerHTML = '<div>&nbsp;</div>';
+            } else {
+                // fill with column clues
+                td.className = `col_header_${j}_${i} `;
+                td.innerHTML = `<div>${columnClues[j][i - (maxColumnHeight - columnClues[j].length)]}</div>`;
             }
             td.className += 'border border-gray-400 text-center';
             tr.appendChild(td);
@@ -61,12 +63,14 @@ function createGrid(rowClues, columnClues) {
         // header rows
         for (let i = 0; i < maxRowWidth; i++) {
             const td = document.createElement('td');
-            if (row.length > i) {
-                td.className = `row_header_${i}_${rowIndex} `;
-                td.innerHTML = `<div>${row[row.length - i - 1]}</div>`;
-            } else {
+            if (i < maxRowWidth - row.length) {
+                // fill with empty cells if there is space before the clues
                 td.className = 'row_header_empty ';
                 td.innerHTML = '<div>&nbsp;</div>';
+            } else {
+                // fill with row clues
+                td.className = `row_header_${i}_${rowIndex} `;
+                td.innerHTML = `<div>${row[i - (maxRowWidth - row.length)]}</div>`;
             }
             td.className += 'border border-gray-400 text-center';
             sideRow.appendChild(td);
