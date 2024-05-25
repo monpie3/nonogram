@@ -35,7 +35,7 @@ function createGrid(rowClues, columnClues) {
                 td.className = `col_header_${j}_${i} `;
                 td.innerHTML = `<div>${columnClues[j][i - (maxColumnHeight - columnClues[j].length)]}</div>`;
             }
-            td.className += 'border border-gray-400 text-center';
+            td.className += 'border border-gray-400 text-center w-8 h-8';
             tr.appendChild(td);
         }
         topRowTbody.appendChild(tr);
@@ -72,7 +72,7 @@ function createGrid(rowClues, columnClues) {
                 td.className = `row_header_${i}_${rowIndex} `;
                 td.innerHTML = `<div>${row[i - (maxRowWidth - row.length)]}</div>`;
             }
-            td.className += 'border border-gray-400 text-center';
+            td.className += 'border border-gray-400 text-center w-8 h-8';
             sideRow.appendChild(td);
         }
         sideTbody.appendChild(sideRow);
@@ -82,7 +82,7 @@ function createGrid(rowClues, columnClues) {
             const td = document.createElement('td');
             td.className = `main_${colIndex}_${rowIndex} `;
             td.innerHTML = '<div></div>';
-            td.className += 'border border-gray-400 text-center';
+            td.className += 'border border-gray-400 text-center w-8 h-8';
             mainRow.appendChild(td);
         }
         mainGridTbody.appendChild(mainRow);
