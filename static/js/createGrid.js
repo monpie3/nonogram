@@ -16,9 +16,10 @@ function createGrid(rowClues, columnClues) {
 
     topRow.appendChild(emptyCorner); // Empty top-left cell
 
-    const topRowCell = document.createElement('td');
+    // Create table with column clues
     const topRowTable = document.createElement('table');
     const topRowTbody = document.createElement('tbody');
+    const topRowCell = document.createElement('td');
 
     const maxColumnHeight = Math.max(...columnClues.map(col => col.length));
 
