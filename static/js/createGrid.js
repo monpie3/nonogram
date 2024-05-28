@@ -1,3 +1,4 @@
+// TO DO: Split function into smaller functions
 /*
 Creates 4 tables:
 one for the column clues, one for the row clues, and one for the main grid
@@ -5,10 +6,9 @@ and the last one which combines everything
 */
 function createGrid(rowClues, columnClues) {
     const table = document.createElement('nonogramTable');
-    table.className = 'shrink-0';
     const tbody = document.createElement('tbody');
 
-    // Create table with column clues
+    // Top row with empty cell and column clues
     const topRow = document.createElement('tr');
 
     const emptyCorner = document.createElement('td');
@@ -48,13 +48,13 @@ function createGrid(rowClues, columnClues) {
     tbody.appendChild(topRow);
 
     // Create table with row clues and table with the main grid
-    const sideTableCell = document.createElement('td');
     const sideTable = document.createElement('table');
     const sideTbody = document.createElement('tbody');
+    const sideTableCell = document.createElement('td');
 
-    const mainGridCell = document.createElement('td');
     const mainGridTable = document.createElement('table');
     const mainGridTbody = document.createElement('tbody');
+    const mainGridCell = document.createElement('td');
 
     rowClues.forEach((row, rowIndex) => {
         const sideRow = document.createElement('tr');
