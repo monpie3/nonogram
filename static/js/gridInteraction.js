@@ -1,10 +1,39 @@
+let isMouseDown = false;
+let isFilled;
+let currentButton;
+
 container.addEventListener('mousedown', function (event) {
     const cell = event.target;
     const classes = Array.from(cell.classList);
 
     if (event.target.tagName === 'TD' && classes.some(c => c.startsWith('main_'))) {
-        if (event.button === 0) { // left click
-            // if there is already X then just reset the cell
+        isMouseDown = true;
+        currentButton = event.button;
+        toggleCell(cell, event.button);
+        isFilled = (cell.style.backgroundColor === 'black' || cell.textContent === 'X');
+        event.preventDefault(); // prevent text selection
+    }
+});
+
+container.addEventListener('mouseover', function (event) {
+    if (isMouseDown) {
+        const cell = event.target;
+        const classes = Array.from(cell.classList);
+        if (event.target.tagName === 'TD' && classes.some(c => c.startsWith('main_'))) {
+            toggleCell(cell, currentButton, isFilled);
+        }
+    }
+});
+
+document.addEventListener('mouseup', function () {
+    isMouseDown = false;
+    currentButton = null;
+});
+
+
+function toggleCell(cell, button, isFilled = null) {
+    if (button === 0) { // left click
+        if (isFilled === null) {
             if (cell.textContent === 'X') {
                 cell.textContent = '';
             }
@@ -14,7 +43,16 @@ container.addEventListener('mousedown', function (event) {
             } else {
                 cell.style.backgroundColor = 'black';
             }
-        } else if (event.button === 2) { // right click
+        } else {
+            if (isFilled) {
+                cell.style.backgroundColor = 'black';
+                cell.textContent = '';
+            } else {
+                cell.style.backgroundColor = '';
+            }
+        }
+    } else if (button === 2) { // right click
+        if (isFilled === null) {
             // if the cell is already black then just reset the cell
             if (cell.style.backgroundColor === 'black') {
                 cell.style.backgroundColor = '';
@@ -25,10 +63,16 @@ container.addEventListener('mousedown', function (event) {
             } else {
                 cell.textContent = 'X';
             }
+        } else {
+            if (isFilled) {
+                cell.textContent = 'X';
+                cell.style.backgroundColor = '';
+            } else {
+                cell.textContent = '';
+            }
         }
-        event.preventDefault();
     }
-});
+}
 
 // prevent context menu from showing on right click
 container.addEventListener('contextmenu', function (event) {
