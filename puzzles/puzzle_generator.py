@@ -76,6 +76,7 @@ def generate_nonogram_from_form(form: NonogramForm) -> Nonogram:
     nonogram_instance = form.save(commit=False)
     # Modify nonogram data field
     nonogram_instance.puzzle_data = nonogram_data
+    nonogram_instance.puzzle_solution = np.array(img, dtype=int).tolist()
     # Save the instance
     nonogram_instance.save()
 
