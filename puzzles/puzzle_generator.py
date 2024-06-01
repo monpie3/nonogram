@@ -70,7 +70,7 @@ def generate_nonogram_from_form(form: NonogramForm) -> Nonogram:
     # Create nonogram data
     row_clues, col_clues = convert_img_to_clues(img)
 
-    nonogram_data = {"rows": row_clues, "columns": col_clues}
+    nonogram_data = {"row_clues": row_clues, "col_clues": col_clues}
 
     # Create a new Nonogram instance, but don't save the instance yet
     nonogram_instance = form.save(commit=False)
