@@ -2,7 +2,8 @@
 {% load static %}
 {% block content %}
     <h1>Nonogram - {{ nonogram.title }}</h1>
-    <div id="tableContainer"></div>
+    <div id="tableContainer" class="w-fit"></div>
+    <button id="checkButton" class="btn my-5 px-8">Check</button>
     <script src="{% static 'js/createGrid.js' %}"></script>
     <script>
         const row_clues = JSON.parse('{{ nonogram.puzzle_data.row_clues|escapejs }}');
