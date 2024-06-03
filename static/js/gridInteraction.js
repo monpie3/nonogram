@@ -10,7 +10,7 @@ container.addEventListener('mousedown', function (event) {
         isMouseDown = true;
         currentButton = event.button;
         toggleCell(cell, event.button);
-        isFilled = (cell.style.backgroundColor === 'black' || cell.textContent === 'X');
+        isFilled = (cell.classList.contains('bg-black') || cell.textContent === 'X');
         event.preventDefault(); // prevent text selection
     }
 });
@@ -38,24 +38,25 @@ function toggleCell(cell, button, isFilled = null) {
                 cell.textContent = '';
             }
             // fill the cell with black color if it is empty
-            if (cell.style.backgroundColor === 'black') {
-                cell.style.backgroundColor = '';
+            // if the cell is already black then just reset the cell
+            if (cell.classList.contains('bg-black')) {
+                cell.classList.remove('bg-black');
             } else {
-                cell.style.backgroundColor = 'black';
+                cell.classList.add('bg-black');
             }
         } else {
             if (isFilled) {
-                cell.style.backgroundColor = 'black';
+                cell.classList.add('bg-black');
                 cell.textContent = '';
             } else {
-                cell.style.backgroundColor = '';
+                cell.classList.remove('bg-black');
             }
         }
     } else if (button === 2) { // right click
         if (isFilled === null) {
             // if the cell is already black then just reset the cell
-            if (cell.style.backgroundColor === 'black') {
-                cell.style.backgroundColor = '';
+            if (cell.classList.contains('bg-black')) {
+                cell.classList.remove('bg-black');
             }
             // enter X if the cell is empty
             if (cell.textContent === 'X') {
@@ -66,7 +67,7 @@ function toggleCell(cell, button, isFilled = null) {
         } else {
             if (isFilled) {
                 cell.textContent = 'X';
-                cell.style.backgroundColor = '';
+                cell.classList.remove('bg-black');
             } else {
                 cell.textContent = '';
             }
