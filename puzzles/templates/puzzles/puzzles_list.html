@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
 {% block page_title %}Nonogram list{% endblock %}
 {% block content %}
-    <h1>Nonograms</h1>
-    <ul>
+    <h1 class="text-xl font-bold">Nonograms:</h1>
+    <ul class="list-disc p-4">
         {% for nonogram in nonograms %}
-            <li><a href="{% url 'nonogram_detail' nonogram.id %}">{{ nonogram.title }}</a></li>
+            <li>
+                <a href="{% url 'puzzle_detail' nonogram.id %}">{{ nonogram.title }}</a>
+            </li>
         {% endfor %}
     </ul>
 {% endblock %}
