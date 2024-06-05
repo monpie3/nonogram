@@ -5,12 +5,18 @@
     <div id="tableContainer" class="w-fit"></div>
     <button id="checkButton" class="btn my-5 px-8">Check</button>
     <script src="{% static 'js/createGrid.js' %}"></script>
+    <script src="{% static 'js/checkSolution.js' %}"></script>
     <script>
         const row_clues = JSON.parse('{{ nonogram.puzzle_data.row_clues|escapejs }}');
         const col_clues = JSON.parse('{{ nonogram.puzzle_data.col_clues|escapejs }}');
 
         const container = document.getElementById('tableContainer');
         container.appendChild(createGrid(row_clues, col_clues));
+
+        const solution = JSON.parse('{{ nonogram.puzzle_solution|escapejs }}');
+        document.getElementById('checkButton').addEventListener('click', function() {
+            checkSolution(solution);
+        });
     </script>
     <script src="{% static 'js/gridInteraction.js' %}"></script>
 {% endblock %}
