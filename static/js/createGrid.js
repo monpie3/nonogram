@@ -7,12 +7,15 @@ and the last one which combines everything
 function createGrid(rowClues, columnClues) {
     const table = document.createElement('table');
     const tbody = document.createElement('tbody');
+    table.classList.add('border-collapse', 'm-0', 'border', 'border-black');
 
     // Top row with empty cell and column clues
     const topRow = document.createElement('tr');
 
     const emptyCorner = document.createElement('td');
     emptyCorner.style.background = 'rgb(240, 240, 240)';
+    emptyCorner.style.padding = '0'; // Remove padding
+    emptyCorner.style.border = 'none'; // Remove border
 
     topRow.appendChild(emptyCorner); // Empty top-left cell
 
@@ -20,6 +23,8 @@ function createGrid(rowClues, columnClues) {
     const topRowTable = document.createElement('table');
     const topRowTbody = document.createElement('tbody');
     const topRowCell = document.createElement('td');
+    topRowCell.style.padding = '0'; // Remove padding
+    topRowCell.style.border = 'none'; // Remove border
 
     const maxColumnHeight = Math.max(...columnClues.map(col => col.length));
 
@@ -37,6 +42,8 @@ function createGrid(rowClues, columnClues) {
                 td.innerHTML = `<div>${columnClues[j][i - (maxColumnHeight - columnClues[j].length)]}</div>`;
             }
             td.className += 'border border-gray-400 text-center w-8 h-8';
+            if ((j + 1) % 5 === 0) td.classList.add('border-r-2', 'border-black');
+            if (i === maxColumnHeight - 1) td.classList.add('border-b-2', 'border-black');
             tr.appendChild(td);
         }
         topRowTbody.appendChild(tr);
@@ -51,11 +58,15 @@ function createGrid(rowClues, columnClues) {
     const sideTable = document.createElement('table');
     const sideTbody = document.createElement('tbody');
     const sideTableCell = document.createElement('td');
+    sideTableCell.style.padding = '0'; // Remove padding
+    sideTableCell.style.border = 'none'; // Remove border
 
     const mainGridTable = document.createElement('table');
     const mainGridTbody = document.createElement('tbody');
     const mainGridCell = document.createElement('td');
     mainGridTable.id = 'mainGrid';
+    mainGridCell.style.padding = '0'; // Remove padding
+    mainGridCell.style.border = 'none'; // Remove border
 
     rowClues.forEach((row, rowIndex) => {
         const sideRow = document.createElement('tr');
@@ -75,6 +86,8 @@ function createGrid(rowClues, columnClues) {
                 td.innerHTML = `<div>${row[i - (maxRowWidth - row.length)]}</div>`;
             }
             td.className += 'border border-gray-400 text-center w-8 h-8';
+            if ((rowIndex + 1) % 5 === 0) td.classList.add('border-b-2', 'border-black');
+            if (i === maxRowWidth - 1) td.classList.add('border-r-2', 'border-black');
             sideRow.appendChild(td);
         }
         sideTbody.appendChild(sideRow);
@@ -85,6 +98,8 @@ function createGrid(rowClues, columnClues) {
             td.className = `main_${colIndex}_${rowIndex} `;
             td.innerHTML = '<div></div>';
             td.className += 'border border-gray-400 text-center w-8 h-8';
+            if ((colIndex + 1) % 5 === 0) td.classList.add('border-r-2', 'border-black');
+            if ((rowIndex + 1) % 5 === 0) td.classList.add('border-b-2', 'border-black');
             mainRow.appendChild(td);
         }
         mainGridTbody.appendChild(mainRow);
