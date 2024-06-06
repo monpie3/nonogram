@@ -55,6 +55,7 @@ function createGrid(rowClues, columnClues) {
     const mainGridTable = document.createElement('table');
     const mainGridTbody = document.createElement('tbody');
     const mainGridCell = document.createElement('td');
+    mainGridTable.id = 'mainGrid';
 
     rowClues.forEach((row, rowIndex) => {
         const sideRow = document.createElement('tr');
