@@ -31,5 +31,5 @@ def puzzles_list(request):
 
 
 def puzzle_detail(request, puzzle_id):
-    nonogram = Nonogram.objects.get(id=puzzle_id)
+    nonogram = get_object_or_404(Nonogram, id=puzzle_id)
     return render(request, "puzzles/puzzle_detail.html", {"nonogram": nonogram})
