@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     "silk",
     "django_browser_reload",
     "debug_toolbar",
+    "cloudinary",
 ]
 
 MIDDLEWARE = [

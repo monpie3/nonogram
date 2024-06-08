@@ -4,6 +4,10 @@
     <h1>Nonogram - {{ nonogram.title }}</h1>
     <div id="tableContainer" class="w-fit"></div>
     <button id="checkButton" class="btn my-5 px-8">Check</button>
+
+    {% load cloudinary %}
+    {% cloudinary nonogram.image %}
+
     <script src="{% static 'js/createGrid.js' %}"></script>
     <script src="{% static 'js/checkSolution.js' %}"></script>
     <script>

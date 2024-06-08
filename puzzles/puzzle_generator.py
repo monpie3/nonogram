@@ -1,7 +1,10 @@
 from enum import Enum
+from io import BytesIO
 
 import numpy as np
+import requests
 from PIL import Image
+from rest_framework import status
 
 from puzzles.forms import NonogramForm
 from puzzles.models import Nonogram
@@ -55,14 +58,19 @@ def generate_nonogram_from_form(form: NonogramForm) -> Nonogram:
     Returns:
         Nonogram: The Nonogram instance with generated data.
     """
-
-    img_path = form.cleaned_data["image"]
+    img = form.cleaned_data["image"]
 
     # Load image
-    img = Image.open(img_path)
+    # TO DO: use the Cloudinary API to upload the image
+    response = requests.get(img.url, timeout=10)
+    if response.status_code == status.HTTP_200_OK:
+        img = Image.open(BytesIO(response.content))
+    else:
+        raise Exception("Cannot download the image")
 
     # Resize image
-    img = image_utilities.resize_img(img, max_width=30)
+    # TO DO: use the Cloudinary resizing transformations
+    img = image_utilities.resize_img(img, max_width=10)
 
     # Transform the image
     img = image_utilities.transform_img(img)

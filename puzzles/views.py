@@ -1,4 +1,4 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404, redirect, render
 
 from puzzles.forms import NonogramForm
 from puzzles.models import Nonogram
