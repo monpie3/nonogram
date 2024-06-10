@@ -37,11 +37,11 @@ def count_black_pixels(image_array: np.ndarray) -> list[list[int]]:
     return row_counts
 
 
-def convert_img_to_clues(img: Image.Image):
+def convert_img_to_clues(img):
     """
     Grup the black pixels in the image to form the nonogram data.
     """
-    img_array = np.array(img)
+    img_array = np.array(img, dtype=int)
     row_clues = count_black_pixels(img_array)
     col_clues = count_black_pixels(img_array.T)
 
@@ -67,10 +67,6 @@ def generate_nonogram_from_form(form: NonogramForm) -> Nonogram:
         img = Image.open(BytesIO(response.content))
     else:
         raise Exception("Cannot download the image")
-
-    # Resize image
-    # TO DO: use the Cloudinary resizing transformations
-    img = image_utilities.resize_img(img, max_width=10)
 
     # Transform the image
     img = image_utilities.transform_img(img)

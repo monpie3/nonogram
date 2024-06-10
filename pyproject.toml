@@ -23,6 +23,7 @@ dependencies = [
     "numpy==1.26.4",
     "cloudinary==1.40.0",
     "requests==2.32.3",
+    "rembg==2.0.57"
 ]
 
 [project.optional-dependencies]

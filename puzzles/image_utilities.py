@@ -1,22 +1,6 @@
-from PIL import Image, ImageFilter
-
-
-def erode(image: Image.Image, cycles: int) -> Image.Image:
-    for _ in range(cycles):
-        image = image.filter(ImageFilter.MinFilter(3))
-    return image
-
-
-def dilate(image: Image.Image, cycles: int) -> Image.Image:
-    for _ in range(cycles):
-        image = image.filter(ImageFilter.MaxFilter(3))
-    return image
-
-
-def smooth(image: Image.Image, cycles: int) -> Image.Image:
-    for _ in range(cycles):
-        image = image.filter(ImageFilter.SMOOTH)
-    return image
+import numpy as np
+import rembg
+from PIL import Image
 
 
 def threshold(image: Image.Image, threshold: int) -> Image.Image:
@@ -36,24 +20,35 @@ def resize_img(img: Image.Image, max_width: int) -> Image.Image:
     return img.resize((max_width, hsize), Image.Resampling.LANCZOS)
 
 
-def transform_img(img: Image.Image) -> Image.Image:
+def remove_empty_space(img):
     """
-    Transform the image to a binary image with edges detected.
+    Remove empty rows and columns from the image.
     """
-    # Converting the image to grayscale, as edge detection
-    # requires input image to be of mode = Grayscale (L)
-    img = img.convert("L")
+    img = np.array(img, dtype=int)
 
-    # You can obtain a better outcome by applying the ImageFilter.SMOOTH filter
-    # Before finding the edges
-    img = smooth(img, cycles=5)
+    rows_to_delete = np.all(img == 1, axis=1)
+    cols_to_delete = np.all(img == 1, axis=0)
 
-    # Detecting Edges on the Image using the argument ImageFilter.FIND_EDGES
-    img = img.filter(ImageFilter.FIND_EDGES)
+    filtered_img = img[~rows_to_delete, :]
+    filtered_img = filtered_img[:, ~cols_to_delete]
 
-    # Threshold
-    img = threshold(img, threshold=20)
-    # Convert the image to binary
+    return Image.fromarray((filtered_img * 255).astype(np.uint8))
+
+
+def transform_img(img: Image.Image):
+    """
+    Transform the image by removing the background and converting it to binary.
+
+    Args:
+        img (Image.Image): The input image to be transformed.
+
+    Returns:
+        The transformed image with the background removed,
+        and converted to binary.
+    """
+    img = rembg.remove(img)  # Remove the background
+    img = threshold(img, threshold=10)
+    img = img.convert("1")  # Convert the image to binary
+    img = remove_empty_space(img)
     img = img.convert("1")
-    img = erode(img, cycles=3)
-    return dilate(img, cycles=1)
+    return resize_img(img, max_width=15)
