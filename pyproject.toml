@@ -92,3 +92,15 @@ ignore_missing_imports = true
 
 [tool.django-stubs]
 django_settings_module = "nonogram.settings"
+
+[tool.coverage.run]
+source = ["nonogram"]
+
+[tool.coverage.report]
+omit = [
+    "*/config-3.py",
+    "*/config.py",
+    "*/migrations/*",
+    "*/tests/*"
+]
+skip_empty = true
