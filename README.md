@@ -77,8 +77,8 @@ Project will run on http://127.0.0.1:8000/
 
 ---
 ### Key Features To Implement
-- [ ] 🖼️ **Puzzle Generation**: Craft puzzles from your own photos, transforming them into engaging challenges for you to solve.
-- [ ] 🎨 **Puzzle Solving**: And solve them directly on the platform to sharpen your logical thinking skills.
+- [x] 🖼️ **Puzzle Generation**: Craft puzzles from your own photos, transforming them into engaging challenges for you to solve.
+- [x] 🎨 **Puzzle Solving**: And solve them directly on the platform to sharpen your logical thinking skills.
 
 
 ### Nice to have
