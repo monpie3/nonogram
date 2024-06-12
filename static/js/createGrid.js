@@ -13,7 +13,7 @@ function createGrid(rowClues, columnClues) {
     const topRow = document.createElement('tr');
 
     const emptyCorner = document.createElement('td');
-    emptyCorner.style.background = 'rgb(240, 240, 240)';
+    emptyCorner.classList.add('bg-gray-400');
     emptyCorner.style.padding = '0'; // Remove padding
     emptyCorner.style.border = 'none'; // Remove border
 
@@ -42,8 +42,8 @@ function createGrid(rowClues, columnClues) {
                 td.innerHTML = `<div>${columnClues[j][i - (maxColumnHeight - columnClues[j].length)]}</div>`;
             }
             td.className += 'border border-gray-400 text-center w-8 h-8';
-            if ((j + 1) % 5 === 0) td.classList.add('border-r-2', 'border-black');
-            if (i === maxColumnHeight - 1) td.classList.add('border-b-2', 'border-black');
+            if ((j + 1) % 5 === 0) td.classList.add('border-r-4', 'border-black');
+            if (i === maxColumnHeight - 1) td.classList.add('border-b-4', 'border-black');
             tr.appendChild(td);
         }
         topRowTbody.appendChild(tr);
@@ -86,8 +86,8 @@ function createGrid(rowClues, columnClues) {
                 td.innerHTML = `<div>${row[i - (maxRowWidth - row.length)]}</div>`;
             }
             td.className += 'border border-gray-400 text-center w-8 h-8';
-            if ((rowIndex + 1) % 5 === 0) td.classList.add('border-b-2', 'border-black');
-            if (i === maxRowWidth - 1) td.classList.add('border-r-2', 'border-black');
+            if ((rowIndex + 1) % 5 === 0) td.classList.add('border-b-4', 'border-black');
+            if (i === maxRowWidth - 1) td.classList.add('border-r-4', 'border-black');
             sideRow.appendChild(td);
         }
         sideTbody.appendChild(sideRow);
@@ -98,8 +98,8 @@ function createGrid(rowClues, columnClues) {
             td.className = `main_${colIndex}_${rowIndex} `;
             td.innerHTML = '<div></div>';
             td.className += 'border border-gray-400 text-center w-8 h-8';
-            if ((colIndex + 1) % 5 === 0) td.classList.add('border-r-2', 'border-black');
-            if ((rowIndex + 1) % 5 === 0) td.classList.add('border-b-2', 'border-black');
+            if ((colIndex + 1) % 5 === 0) td.classList.add('border-r-4', 'border-black');
+            if ((rowIndex + 1) % 5 === 0) td.classList.add('border-b-4', 'border-black');
             mainRow.appendChild(td);
         }
         mainGridTbody.appendChild(mainRow);

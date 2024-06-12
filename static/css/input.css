@@ -5,3 +5,7 @@
 .hidden {
   display: none;
 }
+
+html {
+  background-color: #181a1b;
+}

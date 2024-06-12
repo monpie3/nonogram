@@ -13,9 +13,9 @@
         <link rel="stylesheet" href="{% static 'css/output.css' %}">
         <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
     </head>
-    <body>
+    <body class="text-white">
         <div class="flex flex-col h-screen justify-between">
-            <nav class="navbar bg-slate-800 shadow-md flex justify-between">
+            <nav class="navbar bg-[#161c21] shadow-md flex justify-between">
                 <div class="nav-left">
                     <a class="btn btn-ghost" href="{% url 'puzzles_list' %}">Puzzles</a>
                     <a class="btn btn-ghost" href="{% url 'instruction' %}">Instruction</a>
@@ -38,7 +38,7 @@
             <div class="container p-10">
                 {% block content %}{% endblock %}
             </div>
-            <footer class="footer footer-center p-4 bg-slate-800">
+            <footer class="footer footer-center p-4 bg-[#161c21]">
                 <p>© {% now "Y" %} Nonogram - 100 days of code challenge</p>
             </footer>
         </div>

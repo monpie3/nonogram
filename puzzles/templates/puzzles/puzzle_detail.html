@@ -3,7 +3,7 @@
 {% block content %}
     <h1>Nonogram - {{ nonogram.title }}</h1>
     <div id="tableContainer" class="w-fit"></div>
-    <button id="checkButton" class="btn my-5 px-8">Check</button>
+    <button id="checkButton" class="btn my-5 px-8 text-white">Check</button>
 
     {% load cloudinary %}
     {% cloudinary nonogram.image %}
