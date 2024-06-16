@@ -22,8 +22,10 @@ This web application will be your go-to platform for generating logical puzzles 
 ---
 ### Deployment
 
-[DEMO](https://nonogram-hfdi.onrender.com/) 🚀
+[DEMO 🚀](https://nonogram-hfdi.onrender.com/)
 
+> [!NOTE]
+> The first-time compile and application warm-up may be slow because this project use free plans.
 
 This project is deployed on [Render](https://dev.to/vincod/django-on-render-1g9a), with the database hosted on [Railway](https://dev.to/dennisivy11/easiest-django-postgres-connection-ever-with-railway-11h6), and files stored on [Cloudinary](https://cloudinary.com/documentation/django_helper_methods_tutorial).
 
